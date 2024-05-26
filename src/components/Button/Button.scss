@@ -1,0 +1,31 @@
+@use '../../styles/partials/colours';
+@use '../../styles/partials/mixins';
+@use '../../styles/partials/typography';
+
+.button {
+	display: flex;
+	align-items: center;
+	gap: 0.25rem;
+	height: 2.5rem;
+	width: 100%;
+	padding-top: 0.25rem;
+	margin: 1rem 2rem 0;
+	@extend %labels_buttons-mobile;
+	color: colours.$primary_light;
+	background-color: colours.$primary_colour;
+	border: 0px;
+	border-radius: 0.25rem;
+
+	&:hover {
+		background-color: colours.$secondary_colour;
+	}
+
+	@include mixins.tablet {
+		@include typography.labels_buttons;
+		width: 9.375rem;
+	}
+
+	&__icon {
+		height: 100%;
+	}
+}
