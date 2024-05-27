@@ -1,0 +1,14 @@
+@use '../../styles/partials/colours';
+@use '../../styles/partials/mixins';
+
+.avatar {
+	height: 2.5rem;
+
+	&__container {
+		height: 2.5rem;
+		width: 2.5rem;
+		border-radius: 50%;
+		background-color: colours.$secondary_med;
+		overflow: hidden;
+	}
+}
