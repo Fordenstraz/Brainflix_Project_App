@@ -2,13 +2,22 @@
 @use '../../styles/partials/mixins';
 
 .avatar {
-	height: 2.5rem;
+	height: 2.25rem;
+
+	@include mixins.tablet {
+		height: 2.5rem;
+	}
 
 	&__container {
-		height: 2.5rem;
-		width: 2.5rem;
+		height: 2.25rem;
+		width: 2.25rem;
 		border-radius: 50%;
 		background-color: colours.$secondary_med;
 		overflow: hidden;
+
+		@include mixins.tablet {
+			height: 2.5rem;
+			width: 2.5rem;
+		}
 	}
 }
