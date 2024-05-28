@@ -1,0 +1,36 @@
+@use '../../styles/partials/colours';
+@use '../../styles/partials/mixins';
+@use '../../styles/partials/typography';
+
+%form-field {
+	height: 2.25rem;
+	min-width: 15rem;
+	max-width: 100%;
+	padding: 0.75rem;
+	border: 1px solid colours.$secondary_med;
+	border-radius: 4px;
+	@extend %labels_buttons-mobile;
+	font-weight: 400;
+
+	@include mixins.tablet {
+		height: 2.5rem;
+		padding: 1rem;
+	}
+
+	&:hover {
+		border: 2px solid colours.$primary_colour;
+	}
+
+	&::placeholder {
+		font-family: 'avenir-next';
+		color: colours.$primary_dark;
+	}
+
+	&--error {
+		border-color: colours.$error;
+	}
+
+	&__label {
+		margin-bottom: 0.25rem;
+	}
+}

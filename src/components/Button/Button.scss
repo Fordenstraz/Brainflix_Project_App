@@ -10,9 +10,6 @@
 	gap: 0.75rem;
 	height: 2.5rem;
 	width: 100%;
-	padding-top: 0.3rem;
-	margin: 1rem 2rem 0;
-	@extend %labels_buttons-mobile;
 	color: colours.$primary_light;
 	background-color: colours.$primary_colour;
 	border: 0px;
@@ -22,14 +19,20 @@
 		background-color: colours.$secondary_colour;
 	}
 
-	@include mixins.tablet {
-		@include typography.labels_buttons;
-		width: 9.375rem;
-	}
-
 	&__icon {
 		height: 50%;
 		position: absolute;
 		left: 0.75rem;
+	}
+
+	&__text {
+		@extend %labels_buttons-mobile;
+		font-size: 0.875rem;
+		padding-top: 0.3rem;
+
+		@include mixins.tablet {
+			@include typography.labels_buttons;
+			width: 9.375rem;
+		}
 	}
 }

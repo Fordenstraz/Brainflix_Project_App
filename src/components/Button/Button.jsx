@@ -12,7 +12,7 @@ export default function Button({ icon = null, label }) {
 					alt='an icon'
 				/>
 			)}
-			{label}
+			<span className='button__text'>{label}</span>
 		</button>
 	);
 }
