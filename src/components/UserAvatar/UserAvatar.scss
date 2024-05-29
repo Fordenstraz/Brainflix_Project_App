@@ -8,7 +8,8 @@
 		height: 2.5rem;
 	}
 
-	&__container {
+	&__mobile {
+		display: flex;
 		height: 2.25rem;
 		width: 2.25rem;
 		border-radius: 50%;
@@ -16,8 +17,18 @@
 		overflow: hidden;
 
 		@include mixins.tablet {
-			height: 2.5rem;
-			width: 2.5rem;
+			display: none;
+		}
+	}
+
+	&__standard {
+		@extend .avatar__mobile;
+		display: none;
+		height: 2.5rem;
+		width: 2.5rem;
+
+		@include mixins.tablet {
+			display: flex;
 		}
 	}
 }

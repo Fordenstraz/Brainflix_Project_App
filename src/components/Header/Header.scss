@@ -12,25 +12,21 @@
 
 	@include mixins.tablet {
 		flex-direction: row;
-	}
-
-	&__right {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		width: 100%;
-		gap: 1rem;
-
-		@include mixins.tablet {
-			flex-direction: row;
-		}
+		justify-content: space-between;
+		padding: 1vw 3vw;
 	}
 }
 
 .nav {
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: space-between;
 	width: 100%;
+
+	@include mixins.tablet {
+		justify-content: flex-end;
+		gap: 1.5rem;
+	}
 
 	&__searchbar {
 		@extend %form-field;
@@ -38,5 +34,9 @@
 		padding-left: 2.5rem;
 		background: url('../../assets/images/icons/search.svg') no-repeat;
 		background-position: 0.75rem 50%;
+
+		@include mixins.tablet {
+			width: 25%;
+		}
 	}
 }

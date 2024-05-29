@@ -10,10 +10,16 @@
 	gap: 0.75rem;
 	height: 2.5rem;
 	width: 100%;
+	margin-top: 1rem;
 	color: colours.$primary_light;
 	background-color: colours.$primary_colour;
 	border: 0px;
 	border-radius: 0.25rem;
+
+	@include mixins.tablet {
+		width: 12.5rem;
+		margin-top: 0;
+	}
 
 	&:hover {
 		background-color: colours.$secondary_colour;
@@ -22,17 +28,16 @@
 	&__icon {
 		height: 50%;
 		position: absolute;
-		left: 0.75rem;
+		left: 0.5rem;
 	}
 
 	&__text {
 		@extend %labels_buttons-mobile;
 		font-size: 0.875rem;
-		padding-top: 0.3rem;
+		padding-top: 0.25rem;
 
 		@include mixins.tablet {
 			@include typography.labels_buttons;
-			width: 9.375rem;
 		}
 	}
 }

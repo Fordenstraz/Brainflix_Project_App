@@ -11,21 +11,28 @@ export default function Header({ userImage }) {
 		<header className='header'>
 			<Logo />
 
-			<div className='header__right'>
-				<nav className='nav'>
-					<input
-						className='nav__searchbar'
-						type='text'
-						placeholder='Search'
-					/>
-					<UserAvatar avatarImg={userImage} />
-				</nav>
+			<nav className='nav'>
+				<input
+					className='nav__searchbar'
+					type='text'
+					placeholder='Search'
+				/>
+
+				<UserAvatar
+					avatarImg={userImage}
+					tag='mobile'
+				/>
 
 				<Button
 					icon={uploadIcon}
 					label='UPLOAD'
 				/>
-			</div>
+
+				<UserAvatar
+					avatarImg={userImage}
+					tag='standard'
+				/>
+			</nav>
 		</header>
 	);
 }

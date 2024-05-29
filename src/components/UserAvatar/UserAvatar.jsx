@@ -1,8 +1,8 @@
 import './UserAvatar.scss';
 
-export default function UserAvatar({ avatarImg }) {
+export default function UserAvatar({ avatarImg, tag }) {
 	return (
-		<div className='avatar__container'>
+		<div className={`avatar__${tag}`}>
 			<img
 				className='avatar'
 				src={avatarImg}
