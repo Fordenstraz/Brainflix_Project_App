@@ -34,7 +34,7 @@
 	&__text {
 		@extend %labels_buttons-mobile;
 		font-size: 0.875rem;
-		padding-top: 0.25rem;
+		padding-top: 0.3rem;
 
 		@include mixins.tablet {
 			@include typography.labels_buttons;
