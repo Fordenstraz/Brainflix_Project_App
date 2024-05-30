@@ -17,7 +17,7 @@
 	border-radius: 0.25rem;
 
 	@include mixins.tablet {
-		width: 12.5rem;
+		width: 10rem;
 		margin-top: 0;
 	}
 
@@ -34,10 +34,11 @@
 	&__text {
 		@extend %labels_buttons-mobile;
 		font-size: 0.875rem;
-		padding-top: 0.3rem;
+		padding-top: 0.25rem;
 
 		@include mixins.tablet {
 			@include typography.labels_buttons;
+			padding-top: 0.4rem;
 		}
 	}
 }
