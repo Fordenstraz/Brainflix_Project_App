@@ -1,13 +1,15 @@
 import './UserAvatar.scss';
 
-export default function UserAvatar({ avatarImg, tag }) {
+export default function UserAvatar({ avatarImg, tag = 'standard' }) {
 	return (
 		<div className={`avatar__${tag}`}>
-			<img
-				className='avatar'
-				src={avatarImg}
-				alt='user profile image'
-			/>
+			{avatarImg && (
+				<img
+					className='avatar'
+					src={avatarImg}
+					alt='user profile image'
+				/>
+			)}
 		</div>
 	);
 }
