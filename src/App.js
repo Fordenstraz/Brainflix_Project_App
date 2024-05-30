@@ -18,10 +18,12 @@ export default function App() {
 		<>
 			<Header user={user} />
 
-			<VideoPlayer
-				user={user}
-				video={selectedVideo}
-			/>
+			<main>
+				<VideoPlayer
+					user={user}
+					video={selectedVideo}
+				/>
+			</main>
 		</>
 	);
 }

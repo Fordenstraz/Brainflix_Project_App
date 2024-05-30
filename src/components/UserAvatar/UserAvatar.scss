@@ -8,7 +8,7 @@
 		height: 2.5rem;
 	}
 
-	&__mobile {
+	&__standard {
 		display: flex;
 		height: 2.25rem;
 		width: 2.25rem;
@@ -17,15 +17,22 @@
 		overflow: hidden;
 
 		@include mixins.tablet {
+			height: 2.5rem;
+			width: 2.5rem;
+		}
+	}
+
+	&__mobile {
+		@extend .avatar__standard;
+
+		@include mixins.tablet {
 			display: none;
 		}
 	}
 
-	&__standard {
-		@extend .avatar__mobile;
+	&__desktop {
+		@extend .avatar__standard;
 		display: none;
-		height: 2.5rem;
-		width: 2.5rem;
 
 		@include mixins.tablet {
 			display: flex;

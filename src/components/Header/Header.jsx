@@ -30,7 +30,7 @@ export default function Header({ user }) {
 
 				<UserAvatar
 					avatarImg={user}
-					tag='standard'
+					tag='desktop'
 				/>
 			</nav>
 		</header>

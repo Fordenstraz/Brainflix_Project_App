@@ -8,7 +8,7 @@ import formatTimestamp from '../formatTimestamp';
 
 export default function VideoPlayer(props) {
 	return (
-		<main className='video'>
+		<div className='video'>
 			<figure className='video__current-selection'>
 				<video
 					className='video__player'
@@ -64,6 +64,6 @@ export default function VideoPlayer(props) {
 				user={props.user}
 				video={props.video}
 			/>
-		</main>
+		</div>
 	);
 }

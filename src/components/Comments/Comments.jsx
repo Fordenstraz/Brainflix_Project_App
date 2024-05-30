@@ -31,14 +31,14 @@ export default function Comments(props) {
 
 	return (
 		<div className='comments'>
+			<UserAvatar
+				avatarImg={props.user}
+				tag='standard'
+			/>
+
 			<form
 				className='comments__form'
 				action=''>
-				<UserAvatar
-					avatarImg={props.user}
-					tag='standard'
-				/>
-
 				<div className='comments__input-wrapper'>
 					<label htmlFor='comment-input'>JOIN THE CONVERSATION</label>
 
