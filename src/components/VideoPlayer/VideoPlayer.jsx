@@ -1,17 +1,12 @@
+//Assets/Styles
 import './VideoPlayer.scss';
 import viewsIcon from '../../assets/images/icons/views.svg';
 import likesIcon from '../../assets/images/icons/likes.svg';
+//Components
+import Comments from '../Comments/Comments';
+import formatTimestamp from '../formatTimestamp';
 
 export default function VideoPlayer(props) {
-	//Format timestamps from epoch, to 'MM/DD/YYYY':
-	const formatTimestamp = timestamp => {
-		const date = new Date(timestamp);
-		const month = String(date.getMonth() + 1);
-		const day = String(date.getDate() + 1);
-		const year = date.getFullYear();
-		return `${month}/${day}/${year}`;
-	};
-
 	return (
 		<main className='video'>
 			<figure className='video__current-selection'>
@@ -64,6 +59,11 @@ export default function VideoPlayer(props) {
 					{props.video.comments.length} Comments
 				</div>
 			</section>
+
+			<Comments
+				user={props.user}
+				video={props.video}
+			/>
 		</main>
 	);
 }

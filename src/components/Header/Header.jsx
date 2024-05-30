@@ -6,7 +6,7 @@ import Logo from '../Logo/Logo';
 import UserAvatar from '../UserAvatar/UserAvatar';
 import Button from '../Button/Button';
 
-export default function Header({ userImage }) {
+export default function Header({ user }) {
 	return (
 		<header className='header'>
 			<Logo />
@@ -19,7 +19,7 @@ export default function Header({ userImage }) {
 				/>
 
 				<UserAvatar
-					avatarImg={userImage}
+					avatarImg={user}
 					tag='mobile'
 				/>
 
@@ -29,7 +29,7 @@ export default function Header({ userImage }) {
 				/>
 
 				<UserAvatar
-					avatarImg={userImage}
+					avatarImg={user}
 					tag='standard'
 				/>
 			</nav>

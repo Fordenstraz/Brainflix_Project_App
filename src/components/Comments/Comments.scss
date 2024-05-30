@@ -1,0 +1,60 @@
+@use '../../styles/partials/colours';
+@use '../../styles/partials/mixins';
+@use '../../styles/partials/typography';
+@use '../../styles/partials/placeholders.scss';
+
+.comments {
+	&__form {
+		display: flex;
+		align-items: flex-end;
+		padding-bottom: 1rem;
+	}
+
+	&__input-wrapper {
+		display: flex;
+		flex-direction: column;
+
+		& label {
+			margin-bottom: 0.25rem;
+			@extend %labels_buttons-mobile;
+			color: colours.$primary_med;
+		}
+	}
+
+	&__input {
+		@extend %form-field;
+	}
+
+	&__container {
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+.generated-comment {
+	padding: 1rem;
+	border-top: 1px solid colours.$secondary_med;
+
+	&__container {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__authorship {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__name {
+		color: colours.$primary_dark;
+		font-weight: 600;
+	}
+
+	&__date {
+		color: colours.$primary_med;
+	}
+
+	&__body {
+		color: colours.$primary_dark;
+	}
+}
