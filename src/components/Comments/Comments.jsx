@@ -31,30 +31,34 @@ export default function Comments(props) {
 
 	return (
 		<div className='comments'>
-			<UserAvatar
-				avatarImg={props.user}
-				tag='standard'
-			/>
-
-			<form
-				className='comments__form'
-				action=''>
-				<div className='comments__input-wrapper'>
-					<label htmlFor='comment-input'>JOIN THE CONVERSATION</label>
-
-					<input
-						className='comments__input'
-						id='comment-input'
-						type='text'
-						placeholder='Add a new comment'
-					/>
-				</div>
-
-				<Button
-					icon={commentIcon}
-					label='COMMENT'
+			<div className='comments__form-wrapper'>
+				<UserAvatar
+					avatarImg={props.user}
+					tag='form'
 				/>
-			</form>
+
+				<form
+					className='comments__form'
+					action=''>
+					<div className='comments__input-wrapper'>
+						<label htmlFor='comment-input'>
+							JOIN THE CONVERSATION
+						</label>
+
+						<textarea
+							className='comments__input'
+							id='comment-input'
+							rows='5'
+							placeholder='Add a new comment'
+						/>
+					</div>
+
+					<Button
+						icon={commentIcon}
+						label='COMMENT'
+					/>
+				</form>
+			</div>
 
 			<div className='comments__container'>
 				{props.video.comments.map(generateComments)}
