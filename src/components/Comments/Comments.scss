@@ -69,6 +69,7 @@
 	border-top: 2px solid colours.$secondary_med;
 
 	@include mixins.tablet {
+		justify-content: flex-start;
 		padding-top: 1.5rem;
 	}
 
@@ -82,6 +83,7 @@
 		margin-left: 1rem;
 
 		@include mixins.tablet {
+			width: 100%;
 			margin-left: 0;
 		}
 	}

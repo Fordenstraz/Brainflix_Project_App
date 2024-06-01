@@ -39,6 +39,7 @@
 	&__top-row {
 		display: flex;
 		justify-content: space-between;
+		gap: 1rem;
 		width: 100%;
 
 		@include mixins.tablet {
@@ -54,13 +55,12 @@
 
 	&__searchbar {
 		@extend %form-field;
-		width: 85%;
+		width: 100%;
 		padding-left: 2.5rem;
 		background: url('../../assets/images/icons/search.svg') no-repeat;
 		background-position: 0.75rem 50%;
 
 		@include mixins.tablet {
-			width: 100%;
 			font-weight: 600;
 		}
 
