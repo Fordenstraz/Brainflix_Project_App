@@ -1,0 +1,52 @@
+@use '../../styles/partials/colours';
+@use '../../styles/partials/mixins';
+@use '../../styles/partials/typography';
+
+.video-list {
+	padding: 0 5vw;
+
+	@include mixins.desktop {
+		padding: 1.5rem 10vw 0;
+		border-bottom: none;
+	}
+
+	&__header {
+		padding: 1.5rem 0 1rem;
+		border-top: 2px solid colours.$secondary_med;
+		margin: 0;
+		@extend %labels_buttons-mobile;
+		font-size: 0.8rem;
+		color: colours.$primary_med;
+	}
+
+	&__container {
+	}
+}
+
+.video-preview {
+	display: flex;
+	gap: 1rem;
+	margin-bottom: 1rem;
+
+	&__image {
+		width: 33vw;
+		max-height: 100%;
+		border-radius: 4px;
+	}
+
+	&__authorship {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	&__title {
+		@extend %subheader-mobile;
+		font-weight: 600;
+		margin: 0;
+	}
+
+	&__channel {
+		margin: 0;
+	}
+}
