@@ -4,10 +4,10 @@
 @use '../../styles/partials/placeholders.scss';
 
 .comments {
-	padding: 1.5rem 5vw 0;
+	padding: 1rem 5vw 0;
 
 	@include mixins.desktop {
-		padding: 1.5rem 10vw 0;
+		padding: 1.5rem 0 0 10vw;
 	}
 
 	&__form {
@@ -23,6 +23,10 @@
 			justify-content: space-between;
 			gap: 1.5rem;
 			margin-left: 0;
+		}
+
+		@include mixins.desktop {
+			padding-right: 1.5rem;
 		}
 	}
 
@@ -66,6 +70,10 @@
 
 	@include mixins.tablet {
 		padding-top: 1.5rem;
+	}
+
+	@include mixins.desktop {
+		padding-right: 1.5rem;
 	}
 
 	&__container {

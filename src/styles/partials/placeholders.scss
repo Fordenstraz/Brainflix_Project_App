@@ -4,7 +4,7 @@
 
 %form-field {
 	max-width: 100%;
-	padding: 0.75rem;
+	padding: 0.75rem 0.75rem 0.5rem;
 	border: 1px solid colours.$secondary_med;
 	border-radius: 4px;
 	@extend %labels_buttons-mobile;

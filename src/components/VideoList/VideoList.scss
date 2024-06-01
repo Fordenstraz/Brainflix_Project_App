@@ -3,23 +3,30 @@
 @use '../../styles/partials/typography';
 
 .video-list {
-	padding: 0 5vw;
+	padding: 0 5vw 1rem;
 
 	@include mixins.desktop {
-		padding: 1.5rem 10vw 0;
-		border-bottom: none;
+		padding: 1.5rem 10vw 0 1.5rem;
+		border-left: 2px solid colours.$secondary_med;
 	}
 
 	&__header {
-		padding: 1.5rem 0 1rem;
+		padding: 1.5rem 0 1.25rem;
 		border-top: 2px solid colours.$secondary_med;
 		margin: 0;
 		@extend %labels_buttons-mobile;
 		font-size: 0.8rem;
 		color: colours.$primary_med;
-	}
 
-	&__container {
+		@include mixins.tablet {
+			@include typography.labels_buttons;
+			padding-bottom: 1.5rem;
+		}
+
+		@include mixins.desktop {
+			padding-top: 1rem;
+			border-top: none;
+		}
 	}
 }
 
@@ -28,8 +35,17 @@
 	gap: 1rem;
 	margin-bottom: 1rem;
 
+	@include mixins.tablet {
+		max-width: 50%;
+		margin-bottom: 1.25rem;
+	}
+
+	@include mixins.desktop {
+		max-width: 100%;
+	}
+
 	&__image {
-		width: 33vw;
+		width: 33%;
 		max-height: 100%;
 		border-radius: 4px;
 	}
@@ -44,6 +60,10 @@
 		@extend %subheader-mobile;
 		font-weight: 600;
 		margin: 0;
+
+		@include mixins.desktop {
+			@include typography.subheader;
+		}
 	}
 
 	&__channel {

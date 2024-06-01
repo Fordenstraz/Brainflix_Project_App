@@ -8,6 +8,7 @@ import videoData from './data/video-details.json';
 import Comments from './components/Comments/Comments';
 import Header from './components/Header/Header';
 import VideoPlayer from './components/VideoPlayer/VideoPlayer';
+import VideoInfo from './components/VideoInfo/VideoInfo';
 import VideoList from './components/VideoList/VideoList';
 
 export default function App() {
@@ -22,18 +23,24 @@ export default function App() {
 		<>
 			<Header user={user} />
 
-			<main>
-				<VideoPlayer
-					user={user}
-					video={selectedVideo}
-				/>
+			<VideoPlayer video={selectedVideo} />
 
-				<Comments
-					user={user}
-					video={selectedVideo}
-				/>
+			<main className='main'>
+				<div className='main__video-section'>
+					<VideoInfo
+						user={user}
+						video={selectedVideo}
+					/>
 
-				<VideoList listData={videos} />
+					<Comments
+						user={user}
+						video={selectedVideo}
+					/>
+				</div>
+
+				<aside className='main__other-videos'>
+					<VideoList listData={videos} />
+				</aside>
 			</main>
 		</>
 	);
