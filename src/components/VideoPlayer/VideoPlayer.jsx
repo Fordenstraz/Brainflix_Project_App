@@ -3,7 +3,6 @@ import './VideoPlayer.scss';
 import viewsIcon from '../../assets/images/icons/views.svg';
 import likesIcon from '../../assets/images/icons/likes.svg';
 //Components
-import Comments from '../Comments/Comments';
 import formatTimestamp from '../formatTimestamp';
 
 export default function VideoPlayer(props) {
@@ -59,11 +58,6 @@ export default function VideoPlayer(props) {
 					{props.video.comments.length} Comments
 				</div>
 			</section>
-
-			<Comments
-				user={props.user}
-				video={props.video}
-			/>
 		</div>
 	);
 }

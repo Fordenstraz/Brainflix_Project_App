@@ -35,7 +35,7 @@
 	&__title {
 		color: colours.$primary_dark;
 		padding-bottom: 1rem;
-		border-bottom: 1px solid colours.$secondary_med;
+		border-bottom: 2px solid colours.$secondary_med;
 		@extend %page_header-mobile;
 
 		@include mixins.tablet {
@@ -51,11 +51,10 @@
 		justify-content: space-between;
 		padding-bottom: 1rem;
 		color: colours.$primary_med;
-		border-bottom: 1px solid colours.$secondary_med;
+		border-bottom: 2px solid colours.$secondary_med;
 
 		@include mixins.tablet {
 			padding-bottom: 0.5rem;
-			border-bottom-width: 2px;
 		}
 
 		@include mixins.desktop {

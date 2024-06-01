@@ -12,16 +12,18 @@ export default function Header({ user }) {
 			<Logo />
 
 			<nav className='nav'>
-				<input
-					className='nav__searchbar'
-					type='text'
-					placeholder='Search'
-				/>
+				<div className='nav__top-row'>
+					<input
+						className='nav__searchbar'
+						type='text'
+						placeholder='Search'
+					/>
 
-				<UserAvatar
-					avatarImg={user}
-					tag='mobile'
-				/>
+					<UserAvatar
+						avatarImg={user}
+						tag='mobile'
+					/>
+				</div>
 
 				<Button
 					icon={uploadIcon}

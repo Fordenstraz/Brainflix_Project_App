@@ -3,6 +3,7 @@
 
 .avatar {
 	height: 2.25rem;
+	padding-left: 0.75rem;
 
 	@include mixins.tablet {
 		height: 2.5rem;
@@ -10,7 +11,9 @@
 
 	&__standard {
 		display: flex;
+		justify-content: center;
 		height: 2.25rem;
+		min-width: 2.25rem;
 		width: 2.25rem;
 		border-radius: 50%;
 		background-color: colours.$secondary_med;
@@ -18,7 +21,8 @@
 
 		@include mixins.tablet {
 			height: 2.5rem;
-			width: 2.5rem;
+			min-width: 2.5rem;
+			margin-right: 1.25rem;
 		}
 	}
 
@@ -37,5 +41,10 @@
 		@include mixins.tablet {
 			display: flex;
 		}
+	}
+
+	&__form {
+		@extend .avatar__standard;
+		margin-top: 1.25rem;
 	}
 }
