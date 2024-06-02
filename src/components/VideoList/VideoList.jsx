@@ -1,20 +1,11 @@
 //Assets/Styles
 import './VideoList.scss';
 
-export default function VideoList({
-	listData,
-	currentVideo,
-	setSelectedVideo,
-}) {
+export default function VideoList({ listData, currentVideo, selectNewVideo }) {
 	//Create list that exclude current video:
 	const nextVideosList = listData.filter(video => {
 		return video.id !== currentVideo.id;
 	});
-
-	//Set the selected video state:
-	const selectNewVideo = target => {
-		setSelectedVideo(listData.indexOf(target));
-	};
 
 	//Template to create each video preview:
 	const generateVideoPreview = video => {
