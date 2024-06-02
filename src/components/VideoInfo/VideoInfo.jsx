@@ -3,20 +3,18 @@ import './VideoInfo.scss';
 import viewsIcon from '../../assets/images/icons/views.svg';
 import likesIcon from '../../assets/images/icons/likes.svg';
 //Components
-import formatTimestamp from '../formatTimestamp';
+import formatTimestamp from '../utils/formatTimestamp';
 
-export default function VideoInfo(props) {
+export default function VideoInfo({ video }) {
 	return (
 		<section className='video__info'>
-			<h1 className='video__title'>{props.video.title}</h1>
+			<h1 className='video__title'>{video.title}</h1>
 
 			<div className='video__details'>
 				<div className='video__authorship'>
-					<div className='video__channel'>
-						By {props.video.channel}
-					</div>
+					<div className='video__channel'>By {video.channel}</div>
 
-					<span>{formatTimestamp(props.video.timestamp)}</span>
+					<span>{formatTimestamp(video.timestamp)}</span>
 				</div>
 
 				<div className='video__metrics'>
@@ -26,7 +24,7 @@ export default function VideoInfo(props) {
 							alt='an eye'
 						/>
 
-						{props.video.views}
+						{video.views}
 					</div>
 
 					<div>
@@ -35,15 +33,15 @@ export default function VideoInfo(props) {
 							alt='a heart'
 						/>
 
-						{props.video.likes}
+						{video.likes}
 					</div>
 				</div>
 			</div>
 
-			<div className='video__description'>{props.video.description}</div>
+			<div className='video__description'>{video.description}</div>
 
 			<div className='video__comments'>
-				{props.video.comments.length} Comments
+				{video.comments.length} Comments
 			</div>
 		</section>
 	);

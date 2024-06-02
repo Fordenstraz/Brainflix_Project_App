@@ -4,9 +4,9 @@ import commentIcon from '../../assets/images/icons/add_comment.svg';
 //Components
 import UserAvatar from '../UserAvatar/UserAvatar';
 import Button from '../Button/Button';
-import formatTimestamp from '../formatTimestamp';
+import formatTimestamp from '../utils/formatTimestamp';
 
-export default function Comments(props) {
+export default function Comments({ user, video }) {
 	const generateComments = comment => {
 		return (
 			<div
@@ -33,7 +33,7 @@ export default function Comments(props) {
 		<div className='comments'>
 			<div className='comments__form-wrapper'>
 				<UserAvatar
-					avatarImg={props.user}
+					avatarImg={user}
 					tag='form'
 				/>
 
@@ -61,7 +61,7 @@ export default function Comments(props) {
 			</div>
 
 			<div className='comments__container'>
-				{props.video.comments.map(generateComments)}
+				{video.comments.map(generateComments)}
 			</div>
 		</div>
 	);

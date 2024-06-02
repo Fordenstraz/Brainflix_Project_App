@@ -13,33 +13,34 @@ import VideoList from './components/VideoList/VideoList';
 
 export default function App() {
 	//Set state with default video:
-	const [selectedVideo, setSelectedVideo] = useState(videoData[0]);
+	const [selectedVideo, setSelectedVideo] = useState(0);
 	//Set state for current user:
 	const [user, setUser] = useState(avatar);
 	//Set state of video list:
-	const [videos, setVideos] = useState(JSONVideos);
+	const [asideVideos, setAsideVideos] = useState(JSONVideos);
 
 	return (
 		<>
 			<Header user={user} />
 
-			<VideoPlayer video={selectedVideo} />
+			<VideoPlayer video={videoData[selectedVideo]} />
 
 			<main className='main'>
 				<div className='main__video-section'>
-					<VideoInfo
-						user={user}
-						video={selectedVideo}
-					/>
+					<VideoInfo video={videoData[selectedVideo]} />
 
 					<Comments
 						user={user}
-						video={selectedVideo}
+						video={videoData[selectedVideo]}
 					/>
 				</div>
 
 				<aside className='main__other-videos'>
-					<VideoList listData={videos} />
+					<VideoList
+						listData={asideVideos}
+						currentVideo={videoData[selectedVideo]}
+						setSelectedVideo={setSelectedVideo}
+					/>
 				</aside>
 			</main>
 		</>
