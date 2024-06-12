@@ -3,7 +3,7 @@ import './VideoInfo.scss';
 import viewsIcon from '../../assets/images/icons/views.svg';
 import likesIcon from '../../assets/images/icons/likes.svg';
 //Utilities
-import formatTimestamp from '../utils/formatTimestamp';
+import formatTimestamp from '../../utils/formatTimestamp';
 
 export default function VideoInfo({ video }) {
 	return (

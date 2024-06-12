@@ -4,7 +4,7 @@ import commentIcon from '../../assets/images/icons/add_comment.svg';
 //Components
 import UserAvatar from '../UserAvatar/UserAvatar';
 import Button from '../Button/Button';
-import formatTimestamp from '../utils/formatTimestamp';
+import formatTimestamp from '../../utils/formatTimestamp';
 
 export default function Comments({ user, video }) {
 	const generateComments = comment => {

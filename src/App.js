@@ -11,7 +11,7 @@ import VideoPlayer from './components/VideoPlayer/VideoPlayer';
 import VideoInfo from './components/VideoInfo/VideoInfo';
 import VideoList from './components/VideoList/VideoList';
 //Utilities
-import scrollToTop from './components/utils/scrollToTop';
+import scrollToTop from './utils/scrollToTop';
 
 export default function App() {
 	//Set state for current user:
