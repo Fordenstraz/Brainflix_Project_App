@@ -1,3 +1,4 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 //Assets/Styles
 import './App.scss';
 import { useState } from 'react';
@@ -27,7 +28,7 @@ export default function App() {
 	};
 
 	return (
-		<>
+		<Router>
 			<Header user={user} />
 
 			<VideoPlayer video={selectedVideo} />
@@ -50,6 +51,6 @@ export default function App() {
 					/>
 				</aside>
 			</main>
-		</>
+		</Router>
 	);
 }
