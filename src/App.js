@@ -40,7 +40,7 @@ export default function App() {
 					}
 				/>
 				<Route
-					path='/upload'
+					path='upload'
 					element={
 						<Upload
 							user={user}
