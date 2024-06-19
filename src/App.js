@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useState } from 'react';
 //Assets/Styles
 import './App.scss';
-import { useState } from 'react';
 import avatar from './assets/images/Mohan-muruge.jpg';
 import JSONVideoList from './data/videos.json';
 import JSONVideoData from './data/video-details.json';
@@ -11,6 +11,10 @@ import Header from './components/Header/Header';
 import VideoPlayer from './components/VideoPlayer/VideoPlayer';
 import VideoInfo from './components/VideoInfo/VideoInfo';
 import VideoList from './components/VideoList/VideoList';
+//Pages
+import Home from './pages/Home/Home';
+import Upload from './pages/Upload/Upload';
+import SelectedVideo from './pages/SelectedVideo/SelectedVideo';
 //Utilities
 import scrollToTop from './utils/scrollToTop';
 
@@ -29,28 +33,30 @@ export default function App() {
 
 	return (
 		<Router>
-			<Header user={user} />
-
-			<VideoPlayer video={selectedVideo} />
-
-			<main className='main'>
-				<div className='main__video-section'>
-					<VideoInfo video={selectedVideo} />
-
-					<Comments
-						user={user}
-						video={selectedVideo}
-					/>
-				</div>
-
-				<aside className='main__other-videos'>
-					<VideoList
-						listData={asideVideos}
-						currentVideo={selectedVideo}
-						selectNewVideo={selectNewVideo}
-					/>
-				</aside>
-			</main>
+			<Routes>
+				<Route
+					path='/'
+					element={
+						<Home
+							user={user}
+							selectedVideo={selectedVideo}
+							asideVideos={asideVideos}
+							selectNewVideo={selectNewVideo}
+						/>
+					}
+				/>
+				<Route
+					path='/upload'
+					element={
+						<Upload
+							user={user}
+							selectedVideo={selectedVideo}
+							asideVideos={asideVideos}
+							selectNewVideo={selectNewVideo}
+						/>
+					}
+				/>
+			</Routes>
 		</Router>
 	);
 }
