@@ -58,11 +58,14 @@ export default function UploadVideo() {
 				</div>
 
 				<div className='btn-wrapper'>
-					<Button
-						icon={publishIcon}
-						label='PUBLISH'
-						action={confirmUpload}
-					/>
+					<Link to='/'>
+						<Button
+							icon={publishIcon}
+							label='PUBLISH'
+							action={confirmUpload}
+						/>
+					</Link>
+
 					<Link to='/'>
 						<button className='cancel-btn'>CANCEL</button>
 					</Link>
