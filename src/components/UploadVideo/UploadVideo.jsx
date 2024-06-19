@@ -3,9 +3,15 @@ import './UploadVideo.scss';
 import publishIcon from '../../assets/images/icons/publish.svg';
 import thumbnail from '../../assets/images/Upload-video-preview.jpg';
 //Components
+import { Link } from 'react-router-dom';
 import Button from '../Button/Button';
 
 export default function UploadVideo() {
+	const confirmUpload = () => {
+		console.log(`Video upload succesful`);
+		alert(`Video upload succesful`);
+	};
+
 	return (
 		<div className='upload-section__wrapper'>
 			<section className='upload-section'>
@@ -55,8 +61,11 @@ export default function UploadVideo() {
 					<Button
 						icon={publishIcon}
 						label='PUBLISH'
+						action={confirmUpload}
 					/>
-					<button className='cancel-btn'>CANCEL</button>
+					<Link to='/'>
+						<button className='cancel-btn'>CANCEL</button>
+					</Link>
 				</div>
 			</section>
 		</div>
