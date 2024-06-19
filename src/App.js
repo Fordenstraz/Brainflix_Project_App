@@ -5,12 +5,6 @@ import './App.scss';
 import avatar from './assets/images/Mohan-muruge.jpg';
 import JSONVideoList from './data/videos.json';
 import JSONVideoData from './data/video-details.json';
-//Components
-import Comments from './components/Comments/Comments';
-import Header from './components/Header/Header';
-import VideoPlayer from './components/VideoPlayer/VideoPlayer';
-import VideoInfo from './components/VideoInfo/VideoInfo';
-import VideoList from './components/VideoList/VideoList';
 //Pages
 import Home from './pages/Home/Home';
 import Upload from './pages/Upload/Upload';
