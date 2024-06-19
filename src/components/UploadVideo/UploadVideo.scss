@@ -1,0 +1,45 @@
+@use '../../styles/partials/colours';
+@use '../../styles/partials/mixins';
+@use '../../styles/partials/typography';
+@use '../../styles/partials/placeholders.scss';
+
+.upload-section {
+	padding: 0 5vw;
+
+	&__heading {
+		@extend %page_header-mobile;
+		color: colours.$primary_dark;
+	}
+
+	&__thumbnail {
+		width: 100%;
+		margin: 0;
+
+		&-heading {
+		}
+
+		&-img {
+			width: 100%;
+		}
+	}
+
+	&__form {
+	}
+
+	&__label {
+	}
+
+	&__title-input {
+	}
+
+	&__desc-input {
+	}
+
+	&__wrapper {
+		width: 100%;
+		border-top: 2px solid colours.$secondary_med;
+	}
+}
+
+.cancel-btn {
+}

@@ -1,4 +1,3 @@
-import { useState } from 'react';
 //Assets/Styles
 import './Home.scss';
 //Components

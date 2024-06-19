@@ -1,3 +1,4 @@
+//Assets/Styles
 import './Button.scss';
 
 export default function Button({ icon = null, label }) {
