@@ -1,11 +1,12 @@
 //Assets/Styles
 import './Button.scss';
 
-export default function Button({ icon = null, label }) {
+export default function Button({ icon = null, label, action = null }) {
 	return (
 		<button
 			className='button'
-			type='button'>
+			type='button'
+			onClick={action}>
 			{icon && (
 				<img
 					className='button__icon'

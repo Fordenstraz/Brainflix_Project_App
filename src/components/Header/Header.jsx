@@ -2,6 +2,7 @@
 import './Header.scss';
 import uploadIcon from '../../assets/images/icons/upload.svg';
 //Components
+import { Link } from 'react-router-dom';
 import Logo from '../Logo/Logo';
 import UserAvatar from '../UserAvatar/UserAvatar';
 import Button from '../Button/Button';
@@ -25,10 +26,12 @@ export default function Header({ user }) {
 					/>
 				</div>
 
-				<Button
-					icon={uploadIcon}
-					label='UPLOAD'
-				/>
+				<Link to='upload'>
+					<Button
+						icon={uploadIcon}
+						label='UPLOAD'
+					/>
+				</Link>
 
 				<UserAvatar
 					avatarImg={user}
