@@ -36,8 +36,6 @@
 
 	&__input {
 		@extend %form-field;
-		resize: none;
-		scrollbar-width: none;
 	}
 
 	&__input-wrapper {

@@ -6,16 +6,51 @@
 .upload-section {
 	padding: 0 5vw;
 
+	@include mixins.desktop {
+		padding: 0 10vw;
+	}
+
 	&__heading {
+		margin-top: 1.5rem;
 		@extend %page_header-mobile;
 		color: colours.$primary_dark;
+
+		@include mixins.tablet {
+			padding-bottom: 1.25rem;
+			border-bottom: 2px solid colours.$secondary_med;
+			@include typography.page_header;
+			font-size: 2rem;
+		}
+
+		@include mixins.desktop {
+			margin: 2.5rem 0 0.75rem;
+		}
+	}
+
+	&__form-wrapper {
+		@include mixins.desktop {
+			display: flex;
+			align-items: baseline;
+			gap: 1rem;
+		}
 	}
 
 	&__thumbnail {
 		width: 100%;
 		margin: 0;
 
+		@include mixins.tablet {
+			width: 45vw;
+		}
+
+		@include mixins.desktop {
+			width: 20vw;
+		}
+
 		&-heading {
+			@extend %labels_buttons-mobile;
+			color: colours.$primary_med;
+			margin: 0.275rem 0;
 		}
 
 		&-img {
@@ -24,15 +59,33 @@
 	}
 
 	&__form {
+		display: flex;
+		flex-direction: column;
 	}
 
 	&__label {
+		margin: 1rem 0 0.5rem;
+		@extend %labels_buttons-mobile;
+		font-size: 0.8rem;
+		color: colours.$primary_med;
 	}
 
 	&__title-input {
+		@extend %form-field;
+		width: 100%;
+		margin-top: 0.3rem;
 	}
 
 	&__desc-input {
+		@extend .upload-section__title-input;
+
+		@include mixins.tablet {
+			height: 5.5rem;
+		}
+
+		@include mixins.desktop {
+			height: 4.25rem;
+		}
 	}
 
 	&__wrapper {
@@ -41,5 +94,27 @@
 	}
 }
 
+.btn-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	@include mixins.tablet {
+		flex-direction: row-reverse;
+		border-top: 2px solid colours.$secondary_med;
+		margin-top: 1rem;
+	}
+}
+
 .cancel-btn {
+	border: none;
+	margin: 2.5rem 5rem;
+	@extend %labels_buttons-mobile;
+	font-size: 0.825rem;
+	color: colours.$primary_colour;
+
+	@include mixins.tablet {
+		padding-top: 0.5rem;
+		font-weight: 400;
+	}
 }

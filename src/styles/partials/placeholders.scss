@@ -11,6 +11,8 @@
 	outline: 0;
 	@extend %labels_buttons-mobile;
 	font-weight: 400;
+	resize: none;
+	scrollbar-width: none;
 
 	@include mixins.tablet {
 		height: 2.5rem;
