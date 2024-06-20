@@ -1,9 +1,9 @@
 //Assets/Styles
-import './Home.scss';
+import './VideoDetailsPage.scss';
 //Components
 import RenderVideoPage from '../../components/RenderVideoPage/RenderVideoPage';
 
-export default function Home({
+export default function VideoDetailsPage({
 	user,
 	selectedVideo,
 	asideVideos,

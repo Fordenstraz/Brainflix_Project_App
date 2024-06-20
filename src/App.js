@@ -7,8 +7,8 @@ import JSONVideoList from './data/videos.json';
 import JSONVideoData from './data/video-details.json';
 //Pages
 import Home from './pages/Home/Home';
-import Upload from './pages/Upload/Upload';
-import SelectedVideo from './pages/SelectedVideo/SelectedVideo';
+import VideoUploadPage from './pages/VideoUploadPage/VideoUploadPage';
+import VideoDetailsPage from './pages/VideoDetailsPage/VideoDetailsPage';
 //Utilities
 import scrollToTop from './utils/scrollToTop';
 
@@ -19,6 +19,7 @@ export default function App() {
 	const [selectedVideo, setSelectedVideo] = useState(JSONVideoData[0]);
 	//Set state of video list:
 	const [asideVideos, setAsideVideos] = useState(JSONVideoList);
+
 	//Set the selected video state:
 	const selectNewVideo = target => {
 		setSelectedVideo(JSONVideoData[asideVideos.indexOf(target)]);
@@ -40,15 +41,19 @@ export default function App() {
 					}
 				/>
 				<Route
-					path='upload'
+					path='videoUpload'
 					element={
-						<Upload
+						<VideoUploadPage
 							user={user}
 							selectedVideo={selectedVideo}
 							asideVideos={asideVideos}
 							selectNewVideo={selectNewVideo}
 						/>
 					}
+				/>
+				<Route
+					path='videos/:videoId'
+					element={<VideoDetailsPage />}
 				/>
 			</Routes>
 		</Router>

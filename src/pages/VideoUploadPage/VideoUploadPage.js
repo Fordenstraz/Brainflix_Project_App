@@ -1,5 +1,5 @@
 //Assets/Styles
-import './Upload.scss';
+import './VideoUploadPage.scss';
 //Components
 import Header from '../../components/Header/Header';
 import UploadVideo from '../../components/UploadVideo/UploadVideo';
