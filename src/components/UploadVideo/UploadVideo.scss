@@ -74,10 +74,18 @@
 		@extend %form-field;
 		width: 100%;
 		margin-top: 0.3rem;
+
+		&--error {
+			border-color: colours.$error;
+		}
 	}
 
 	&__desc-input {
 		@extend .upload-section__title-input;
+
+		&--error {
+			border-color: colours.$error;
+		}
 
 		@include mixins.tablet {
 			height: 5.5rem;
@@ -119,6 +127,12 @@
 	}
 
 	&:hover {
+		color: colours.$secondary_colour;
 		cursor: pointer;
 	}
+}
+
+.error-message {
+	color: colours.$error;
+	font-size: 12px;
 }
