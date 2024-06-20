@@ -26,7 +26,7 @@ export default function Header({ user }) {
 					/>
 				</div>
 
-				<Link to='upload'>
+				<Link to='uploadVideo'>
 					<Button
 						icon={uploadIcon}
 						label='UPLOAD'
