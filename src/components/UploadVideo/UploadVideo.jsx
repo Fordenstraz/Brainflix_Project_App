@@ -14,6 +14,7 @@ export default function UploadVideo() {
 	//error state:
 	const [errors, setErrors] = useState({ title: false, description: false });
 
+	//input handler:
 	const handleInputChange = event => {
 		const { name, value } = event.target;
 		//spread values back into state, changing only the modified value:
@@ -29,6 +30,7 @@ export default function UploadVideo() {
 		});
 	};
 
+	//upload handler:
 	const confirmUpload = event => {
 		event.preventDefault();
 
@@ -117,13 +119,11 @@ export default function UploadVideo() {
 				</div>
 
 				<div className='btn-wrapper'>
-					<Link to='/'>
-						<Button
-							icon={publishIcon}
-							label='PUBLISH'
-							action={confirmUpload}
-						/>
-					</Link>
+					<Button
+						icon={publishIcon}
+						label='PUBLISH'
+						action={confirmUpload}
+					/>
 
 					<Link to='/'>
 						<button className='cancel-btn'>CANCEL</button>
