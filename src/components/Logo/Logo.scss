@@ -1,6 +1,10 @@
 @use '../../styles/partials/colours';
 @use '../../styles/partials/mixins';
 
+a {
+	height: 1.563rem;
+}
+
 .brainflix-logo-image {
 	height: 1.563rem;
 	width: 7.5rem;
