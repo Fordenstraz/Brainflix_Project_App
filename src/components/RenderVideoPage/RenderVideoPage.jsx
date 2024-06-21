@@ -13,8 +13,6 @@ export default function RenderVideoPage({
 }) {
 	return (
 		<>
-			<Header user={user} />
-
 			<VideoPlayer video={selectedVideo} />
 
 			<main className='main'>

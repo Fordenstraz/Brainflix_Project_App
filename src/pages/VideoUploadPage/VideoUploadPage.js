@@ -7,8 +7,6 @@ import UploadVideo from '../../components/UploadVideo/UploadVideo';
 export default function Upload({ user }) {
 	return (
 		<>
-			<Header user={user} />
-
 			<UploadVideo />
 		</>
 	);
