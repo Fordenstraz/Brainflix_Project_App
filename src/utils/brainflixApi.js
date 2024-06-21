@@ -1,7 +1,7 @@
 //Generated API key:
 export const apiKey = '37734e3a-5cf0-4773-ad6c-f0f00dac5c42';
 
-export default class BandSiteApi {
+export default class BrainflixApi {
 	constructor(apiKey) {
 		this.apiKey = apiKey;
 		this.baseUrl = `https://unit-3-project-api-0a5620414506.herokuapp.com/`;
@@ -22,7 +22,7 @@ export default class BandSiteApi {
 	async getVideoDetails(videoId) {
 		try {
 			const response = await axios.get(
-				`${this.baseUrl}videos/;${videoId}?api_key=${this.apiKey}`
+				`${this.baseUrl}videos/${videoId}?api_key=${this.apiKey}`
 			);
 			//get data from response:
 			return response.data;
@@ -38,7 +38,7 @@ export default class BandSiteApi {
 	// 		const config = { headers: { 'Content-type': 'application/json' } };
 
 	// 		await axios.post(
-	// 			`${this.baseUrl}videos/;${videoId}/comments?api_key=${this.apiKey}`,
+	// 			`${this.baseUrl}videos/${videoId}/comments?api_key=${this.apiKey}`,
 	// 			comment,
 	// 			config
 	// 		);
@@ -50,7 +50,7 @@ export default class BandSiteApi {
 	// async deleteComment(videoId, commentId) {
 	// 	try {
 	// 		await axios.delete(
-	// 			`${this.baseUrl}videos/:${videoId}/comments/:${commentId}?api_key=${this.apiKey}`
+	// 			`${this.baseUrl}videos/${videoId}/comments/${commentId}?api_key=${this.apiKey}`
 	// 		);
 	// 	} catch (error) {
 	// 		console.log(`An error has occurred: `, error);
