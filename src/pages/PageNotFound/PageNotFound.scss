@@ -1,0 +1,16 @@
+@use '../../styles/partials/colours';
+@use '../../styles/partials/mixins';
+@use '../../styles/partials/typography';
+
+.not-found {
+	display: flex;
+	justify-content: center;
+	margin: 4rem 0;
+	@extend %page_header-mobile;
+	color: colours.$primary_colour;
+
+	@include mixins.tablet {
+		margin-top: 12rem;
+		@include typography.page_header;
+	}
+}
