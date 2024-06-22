@@ -6,29 +6,3 @@
 	box-sizing: border-box;
 	text-decoration: none;
 }
-
-.main {
-	display: flex;
-	flex-direction: column;
-	background-color: colours.$primary_light;
-
-	@include mixins.desktop {
-		flex-direction: row;
-	}
-
-	&__video-section {
-		flex: 1;
-
-		@include mixins.desktop {
-			flex-basis: 65%;
-		}
-	}
-
-	&__other-videos {
-		flex: 1;
-
-		@include mixins.desktop {
-			flex-basis: 35%;
-		}
-	}
-}
