@@ -20,7 +20,7 @@
 		overflow: hidden;
 
 		@include mixins.tablet {
-			height: 100%;
+			height: 2.5rem;
 			min-width: 2.5rem;
 			margin-right: 1.25rem;
 		}
