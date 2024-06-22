@@ -81,6 +81,7 @@
 
 	&__description {
 		padding: 1rem 0;
+		color: colours.$primary_dark;
 
 		@include mixins.tablet {
 			padding: 1.5rem 0;
