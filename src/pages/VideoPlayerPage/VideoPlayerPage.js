@@ -1,20 +1,24 @@
 //Assets/Styles
-import './VideoDetailsPage.scss';
+import './VideoPlayerPage.scss';
 //Components
 import RenderVideoPage from '../../components/RenderVideoPage/RenderVideoPage';
 
-export default function VideoDetailsPage({
+export default function VideoPlayerPage({
+	baseUrl,
+	apiKey,
 	user,
 	selectedVideo,
-	asideVideos,
+	videoListArray,
 	selectNewVideo,
 }) {
 	return (
 		<>
 			<RenderVideoPage
+				baseUrl={baseUrl}
+				apiKey={apiKey}
 				user={user}
 				selectedVideo={selectedVideo}
-				asideVideos={asideVideos}
+				videoListArray={videoListArray}
 				selectNewVideo={selectNewVideo}
 			/>
 		</>
