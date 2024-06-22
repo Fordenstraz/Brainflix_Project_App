@@ -1,15 +1,16 @@
+//Assets/Styles
+import './RenderVideoPage.scss';
 //Components
-import Comments from '../../components/Comments/Comments';
-import Header from '../../components/Header/Header';
 import VideoPlayer from '../../components/VideoPlayer/VideoPlayer';
 import VideoInfo from '../../components/VideoInfo/VideoInfo';
+import Comments from '../../components/Comments/Comments';
 import VideoList from '../../components/VideoList/VideoList';
+import scrollToTop from '../../utils/scrollToTop';
 
 export default function RenderVideoPage({
 	user,
-	selectedVideo,
-	videoListArray,
-	selectNewVideo,
+	videoList,
+	selectedVideo = {},
 }) {
 	return (
 		<>
@@ -27,9 +28,8 @@ export default function RenderVideoPage({
 
 				<aside className='main__other-videos'>
 					<VideoList
-						listData={videoListArray}
+						videoList={videoList}
 						currentVideo={selectedVideo}
-						selectNewVideo={selectNewVideo}
 					/>
 				</aside>
 			</main>

@@ -2,8 +2,6 @@
 import './VideoPlayer.scss';
 
 export default function VideoPlayer({ video }) {
-	console.log(video);
-
 	return (
 		<div className='video'>
 			<figure className='video__current-selection'>
