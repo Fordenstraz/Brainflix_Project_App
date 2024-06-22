@@ -8,7 +8,7 @@ import VideoList from '../../components/VideoList/VideoList';
 export default function RenderVideoPage({
 	user,
 	selectedVideo,
-	asideVideos,
+	videoListArray,
 	selectNewVideo,
 }) {
 	return (
@@ -27,7 +27,7 @@ export default function RenderVideoPage({
 
 				<aside className='main__other-videos'>
 					<VideoList
-						listData={asideVideos}
+						listData={videoListArray}
 						currentVideo={selectedVideo}
 						selectNewVideo={selectNewVideo}
 					/>

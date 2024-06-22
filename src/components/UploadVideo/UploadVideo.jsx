@@ -4,8 +4,9 @@ import { useState } from 'react';
 import './UploadVideo.scss';
 import publishIcon from '../../assets/images/icons/publish.svg';
 import thumbnail from '../../assets/images/Upload-video-preview.jpg';
-//Components
+//Components/Utilities
 import Button from '../Button/Button';
+import scrollToTop from '../../utils/scrollToTop';
 
 export default function UploadVideo() {
 	const navigate = useNavigate();
@@ -47,6 +48,7 @@ export default function UploadVideo() {
 		if (!newErrors.title && !newErrors.description) {
 			console.log('Video upload successful');
 			alert('Video upload successful');
+			scrollToTop();
 			navigate('/');
 		}
 	};

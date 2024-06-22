@@ -1,5 +1,6 @@
 @use './styles/partials/typography';
 @use './styles/partials/mixins.scss';
+@use './styles/partials/colours.scss';
 
 * {
 	box-sizing: border-box;
@@ -9,6 +10,7 @@
 .main {
 	display: flex;
 	flex-direction: column;
+	background-color: colours.$primary_light;
 
 	@include mixins.desktop {
 		flex-direction: row;
