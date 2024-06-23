@@ -6,7 +6,6 @@ import './App.scss';
 import userData from './assets/images/Mohan-muruge.jpg';
 //Pages
 import Brainflix from './pages/Brainflix/Brainflix';
-import Home from './pages/Home/Home';
 import VideoUploadPage from './pages/VideoUploadPage/VideoUploadPage';
 import VideoPlayerPage from './pages/VideoPlayerPage/VideoPlayerPage';
 import PageNotFound from './pages/PageNotFound/PageNotFound';
@@ -32,7 +31,6 @@ export default function App() {
 				//set response data as state:
 				setVideoListArray(response.data);
 				console.log('Video list call successful!');
-				console.log(response.data);
 			} catch (error) {
 				console.log(
 					`An error has occurred during the request for the video list: `,
@@ -53,16 +51,13 @@ export default function App() {
 					<Route
 						path='/'
 						element={
-							<Home
+							<VideoPlayerPage
 								user={user}
+								baseUrl={baseUrl}
+								apiKey={apiKey}
 								videoList={videoListArray}
 							/>
 						}
-					/>
-
-					<Route
-						path='uploadVideo'
-						element={<VideoUploadPage user={user} />}
 					/>
 
 					<Route
@@ -75,6 +70,11 @@ export default function App() {
 								videoList={videoListArray}
 							/>
 						}
+					/>
+
+					<Route
+						path='uploadVideo'
+						element={<VideoUploadPage user={user} />}
 					/>
 
 					<Route
