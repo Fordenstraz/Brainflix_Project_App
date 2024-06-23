@@ -1,0 +1,28 @@
+@use '../../styles/partials/colours';
+@use '../../styles/partials/mixins';
+
+.main {
+	display: flex;
+	flex-direction: column;
+	background-color: colours.$primary_light;
+
+	@include mixins.desktop {
+		flex-direction: row;
+	}
+
+	&__video-section {
+		flex: 1;
+
+		@include mixins.desktop {
+			flex-basis: 62%;
+		}
+	}
+
+	&__other-videos {
+		flex: 1;
+
+		@include mixins.desktop {
+			flex-basis: 38%;
+		}
+	}
+}

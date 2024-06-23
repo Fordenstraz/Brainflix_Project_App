@@ -1,14 +1,11 @@
 //Assets/Styles
 import './VideoUploadPage.scss';
 //Components
-import Header from '../../components/Header/Header';
 import UploadVideo from '../../components/UploadVideo/UploadVideo';
 
-export default function Upload({ user }) {
+export default function Upload() {
 	return (
 		<>
-			<Header user={user} />
-
 			<UploadVideo />
 		</>
 	);

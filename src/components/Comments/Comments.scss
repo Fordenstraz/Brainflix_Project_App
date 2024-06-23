@@ -101,7 +101,8 @@
 	}
 
 	&__body {
-		color: colours.$primary_dark;
 		margin-top: 0.5rem;
+		@include typography.body-copy;
+		color: colours.$primary_dark;
 	}
 }

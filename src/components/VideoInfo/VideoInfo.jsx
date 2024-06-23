@@ -2,19 +2,19 @@
 import './VideoInfo.scss';
 import viewsIcon from '../../assets/images/icons/views.svg';
 import likesIcon from '../../assets/images/icons/likes.svg';
-//Utilities
+//Components/Utilities
 import formatTimestamp from '../../utils/formatTimestamp';
 
 export default function VideoInfo({ video }) {
 	return (
 		<section className='video__info'>
-			<h1 className='video__title'>{video.title}</h1>
+			<h1 className='video__title'>{video?.title}</h1>
 
 			<div className='video__details'>
 				<div className='video__authorship'>
-					<div className='video__channel'>By {video.channel}</div>
+					<div className='video__channel'>By {video?.channel}</div>
 
-					<span>{formatTimestamp(video.timestamp)}</span>
+					<span>{formatTimestamp(video?.timestamp)}</span>
 				</div>
 
 				<div className='video__metrics'>
@@ -24,7 +24,7 @@ export default function VideoInfo({ video }) {
 							alt='an eye'
 						/>
 
-						{video.views}
+						{video?.views}
 					</div>
 
 					<div>
@@ -33,15 +33,15 @@ export default function VideoInfo({ video }) {
 							alt='a heart'
 						/>
 
-						{video.likes}
+						{video?.likes}
 					</div>
 				</div>
 			</div>
 
-			<div className='video__description'>{video.description}</div>
+			<div className='video__description'>{video?.description}</div>
 
 			<div className='video__comments'>
-				{video.comments.length} Comments
+				{video?.comments?.length} Comments
 			</div>
 		</section>
 	);

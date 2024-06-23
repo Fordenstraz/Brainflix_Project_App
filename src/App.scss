@@ -1,33 +1,8 @@
 @use './styles/partials/typography';
 @use './styles/partials/mixins.scss';
+@use './styles/partials/colours.scss';
 
 * {
 	box-sizing: border-box;
-	@include typography.body-copy;
 	text-decoration: none;
-}
-
-.main {
-	display: flex;
-	flex-direction: column;
-
-	@include mixins.desktop {
-		flex-direction: row;
-	}
-
-	&__video-section {
-		flex: 1;
-
-		@include mixins.desktop {
-			flex-basis: 65%;
-		}
-	}
-
-	&__other-videos {
-		flex: 1;
-
-		@include mixins.desktop {
-			flex-basis: 35%;
-		}
-	}
 }

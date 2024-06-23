@@ -61,7 +61,7 @@ export default function Comments({ user, video }) {
 			</div>
 
 			<div className='comments__container'>
-				{video.comments.map(generateComments)}
+				{video?.comments?.map(generateComments)}
 			</div>
 		</div>
 	);

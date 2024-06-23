@@ -17,7 +17,7 @@
 	}
 
 	@include mixins.desktop {
-		padding: 1.5vw calc(10vw - 1.25rem) 1.25vw 10vw;
+		padding: 1.5vw 10vw;
 	}
 }
 
@@ -29,7 +29,9 @@
 
 	@include mixins.tablet {
 		justify-content: flex-end;
+		align-items: center;
 		gap: 1.5rem;
+		height: 2.5rem;
 	}
 
 	@include mixins.desktop {
@@ -44,6 +46,7 @@
 
 		@include mixins.tablet {
 			justify-content: flex-end;
+			align-items: center;
 			width: 45%;
 			gap: 1.5rem;
 		}
@@ -55,6 +58,7 @@
 
 	&__searchbar {
 		@extend %form-field;
+		height: 100%;
 		width: 100%;
 		padding-left: 2.5rem;
 		background: url('../../assets/images/icons/search.svg') no-repeat;

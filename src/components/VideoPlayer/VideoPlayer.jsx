@@ -8,8 +8,8 @@ export default function VideoPlayer({ video }) {
 				<video
 					className='video__player'
 					controls
-					poster={video.image}>
-					<source src={video.video} />
+					poster={video?.image}>
+					<source src={video?.video} />
 				</video>
 			</figure>
 		</div>
