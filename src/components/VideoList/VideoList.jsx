@@ -6,11 +6,13 @@ import { Link, useParams } from 'react-router-dom';
 export default function VideoList({ videoList }) {
 	const currentVideo = useParams();
 
-	console.log(currentVideo);
-
 	//Create list that exclude current video:
 	const nextVideosList = videoList.filter(video => {
-		return video.id !== currentVideo.videoId;
+		if (!currentVideo.videoId) {
+			return video.id !== videoList[0].id;
+		} else {
+			return video.id !== currentVideo.videoId;
+		}
 	});
 
 	//Template to create each video preview:

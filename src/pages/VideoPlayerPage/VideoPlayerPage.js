@@ -5,10 +5,14 @@ import RenderVideoPage from '../../components/RenderVideoPage/RenderVideoPage';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
+import scrollToTop from '../../utils/scrollToTop';
 
 export default function VideoPlayerPage({ user, baseUrl, apiKey, videoList }) {
+	//Set up for homepage video:
+	const homeVideo = videoList[0]?.id;
+
 	//Grab the video ID from the URL:
-	const videoId = useParams();
+	const selectedVideo = useParams();
 
 	//Currently selected video:
 	const [currentVideo, setCurrentVideo] = useState({});
@@ -16,21 +20,38 @@ export default function VideoPlayerPage({ user, baseUrl, apiKey, videoList }) {
 	//call for videoDetails using vid id
 	useEffect(() => {
 		const fetchVideoData = async () => {
-			try {
-				const response = await axios.get(
-					`${baseUrl}videos/${videoId.videoId}?api_key=${apiKey}`
-				);
-				//get data from response:
-				setCurrentVideo(response.data);
-			} catch (error) {
-				console.log(
-					`An error has occurred during the request for video data: `,
-					error
-				);
+			if (!selectedVideo.videoId) {
+				try {
+					const response = await axios.get(
+						`${baseUrl}videos/${homeVideo}?api_key=${apiKey}`
+					);
+					//get data from response:
+					setCurrentVideo(response.data);
+					scrollToTop();
+				} catch (error) {
+					console.log(
+						`An error has occurred during the request for video data: `,
+						error
+					);
+				}
+			} else {
+				try {
+					const response = await axios.get(
+						`${baseUrl}videos/${selectedVideo.videoId}?api_key=${apiKey}`
+					);
+					//get data from response:
+					setCurrentVideo(response.data);
+					scrollToTop();
+				} catch (error) {
+					console.log(
+						`An error has occurred during the request for video data: `,
+						error
+					);
+				}
 			}
 		};
 		fetchVideoData();
-	}, [videoId]);
+	}, [selectedVideo]);
 
 	return (
 		<>
