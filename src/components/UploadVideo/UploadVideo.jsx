@@ -1,17 +1,18 @@
-import { Link, useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
 //Assets/Styles
-import './UploadVideo.scss';
-import publishIcon from '../../assets/images/icons/publish.svg';
-import thumbnail from '../../assets/images/Upload-video-preview.jpg';
+import "./UploadVideo.scss";
+import publishIcon from "../../assets/images/icons/publish.svg";
+import thumbnail from "../../assets/images/Upload-video-preview.jpg";
+import uploadVideoThumbnail from "../../assets/images/Upload-video-preview.jpg";
 //Components/Utilities
-import Button from '../Button/Button';
-import scrollToTop from '../../utils/scrollToTop';
+import Button from "../Button/Button";
+import scrollToTop from "../../utils/scrollToTop";
 
 export default function UploadVideo() {
 	const navigate = useNavigate();
 	//input state:
-	const [values, setValues] = useState({ title: '', description: '' });
+	const [values, setValues] = useState({ title: "", description: "" });
 	//error state:
 	const [errors, setErrors] = useState({ title: false, description: false });
 
@@ -46,10 +47,26 @@ export default function UploadVideo() {
 
 		// If no errors, continue:
 		if (!newErrors.title && !newErrors.description) {
-			console.log('Video upload successful');
-			alert('Video upload successful');
+			//axios POST to server:
+			axios
+				.post("http://localhost:8080", {
+					title: values.title,
+					channel: "Mohan Muruge",
+					image: uploadVideoThumbnail,
+					description: values.description,
+					views: 0,
+					likes: 0,
+					duration: "12:34",
+					video: uploadVideoThumbnail,
+					timestamp: "1711471862000",
+					comments: [],
+				})
+				.catch(error => console.log(error));
+
+			console.log("Video upload successful");
+			alert("Video upload successful");
 			scrollToTop();
-			navigate('/');
+			navigate("/");
 		}
 	};
 
@@ -78,8 +95,8 @@ export default function UploadVideo() {
 							<input
 								className={`upload-section__title-input ${
 									errors.title
-										? 'upload-section__title-input--error'
-										: ''
+										? "upload-section__title-input--error"
+										: ""
 								}`}
 								type='text'
 								name='title'
@@ -102,8 +119,8 @@ export default function UploadVideo() {
 							<textarea
 								className={`upload-section__desc-input ${
 									errors.description
-										? 'upload-section__desc-input--error'
-										: ''
+										? "upload-section__desc-input--error"
+										: ""
 								}`}
 								name='description'
 								id='video-description'
