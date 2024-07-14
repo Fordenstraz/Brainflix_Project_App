@@ -1,13 +1,13 @@
 //Assets/Styles
-import './VideoPlayerPage.scss';
+import "./VideoPlayerPage.scss";
 //Components
-import RenderVideoPage from '../../components/RenderVideoPage/RenderVideoPage';
-import { useEffect, useState } from 'react';
-import axios from 'axios';
-import { useParams } from 'react-router-dom';
-import scrollToTop from '../../utils/scrollToTop';
+import RenderVideoPage from "../../components/RenderVideoPage/RenderVideoPage";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { useParams } from "react-router-dom";
+import scrollToTop from "../../utils/scrollToTop";
 
-export default function VideoPlayerPage({ user, baseUrl, apiKey, videoList }) {
+export default function VideoPlayerPage({ user, baseUrl, videoList }) {
 	//Set up for homepage video:
 	const homeVideo = videoList[0]?.id;
 
@@ -23,8 +23,11 @@ export default function VideoPlayerPage({ user, baseUrl, apiKey, videoList }) {
 			if (!selectedVideo.videoId) {
 				try {
 					const response = await axios.get(
-						`${baseUrl}videos/${homeVideo}?api_key=${apiKey}`
+						`${baseUrl}videos/${homeVideo}`
 					);
+
+					console.log(response);
+
 					//get data from response:
 					setCurrentVideo(response.data);
 					scrollToTop();
@@ -37,7 +40,7 @@ export default function VideoPlayerPage({ user, baseUrl, apiKey, videoList }) {
 			} else {
 				try {
 					const response = await axios.get(
-						`${baseUrl}videos/${selectedVideo.videoId}?api_key=${apiKey}`
+						`${baseUrl}videos/${selectedVideo.videoId}`
 					);
 					//get data from response:
 					setCurrentVideo(response.data);

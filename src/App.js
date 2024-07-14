@@ -15,8 +15,7 @@ export default function App() {
 	const [user, setUser] = useState(userData);
 
 	//Set API URL and key:
-	const baseUrl = `https://unit-3-project-api-0a5620414506.herokuapp.com/`;
-	const apiKey = "37734e3a-5cf0-4773-ad6c-f0f00dac5c42";
+	const baseUrl = `http://localhost:8080/`;
 
 	//Video list:
 	const [videoListArray, setVideoListArray] = useState([]);
@@ -25,9 +24,7 @@ export default function App() {
 	useEffect(() => {
 		const fetchVideoList = async () => {
 			try {
-				const response = await axios.get(
-					`http://localhost:8080/videos`
-				);
+				const response = await axios.get(`${baseUrl}videos`);
 				//set response data as state:
 				setVideoListArray(response.data);
 				console.log("Video list call successful!");
@@ -54,7 +51,6 @@ export default function App() {
 							<VideoPlayerPage
 								user={user}
 								baseUrl={baseUrl}
-								apiKey={apiKey}
 								videoList={videoListArray}
 							/>
 						}
@@ -66,7 +62,6 @@ export default function App() {
 							<VideoPlayerPage
 								user={user}
 								baseUrl={baseUrl}
-								apiKey={apiKey}
 								videoList={videoListArray}
 							/>
 						}
