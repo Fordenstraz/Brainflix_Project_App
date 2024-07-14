@@ -54,7 +54,7 @@ export default function UploadVideo() {
 
 			//axios POST to server:
 			axios
-				.post("http://localhost:8080", {
+				.post("http://localhost:8080/videos/upload", {
 					title: values.title,
 					channel: "Mohan Muruge",
 					image: uploadVideoThumbnail,
