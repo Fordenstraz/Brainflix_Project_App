@@ -68,7 +68,7 @@ export default function App() {
 					/>
 
 					<Route
-						path='uploadVideo'
+						path='videos/upload'
 						element={<VideoUploadPage user={user} />}
 					/>
 

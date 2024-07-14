@@ -1,11 +1,11 @@
 //Assets/Styles
-import './Header.scss';
-import uploadIcon from '../../assets/images/icons/upload.svg';
+import "./Header.scss";
+import uploadIcon from "../../assets/images/icons/upload.svg";
 //Components
-import { useNavigate } from 'react-router-dom';
-import Logo from '../Logo/Logo';
-import UserAvatar from '../UserAvatar/UserAvatar';
-import Button from '../Button/Button';
+import { useNavigate } from "react-router-dom";
+import Logo from "../Logo/Logo";
+import UserAvatar from "../UserAvatar/UserAvatar";
+import Button from "../Button/Button";
 
 export default function Header({ user }) {
 	const navigate = useNavigate();
@@ -30,7 +30,7 @@ export default function Header({ user }) {
 				<Button
 					icon={uploadIcon}
 					label='UPLOAD'
-					action={() => navigate('uploadVideo')}
+					action={() => navigate("videos/upload")}
 				/>
 
 				<UserAvatar
