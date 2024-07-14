@@ -48,6 +48,10 @@ export default function UploadVideo() {
 
 		// If no errors, continue:
 		if (!newErrors.title && !newErrors.description) {
+			//check posting time:
+			const postedTime = new Date();
+			const timestamp = postedTime.getTime();
+
 			//axios POST to server:
 			axios
 				.post("http://localhost:8080", {
@@ -59,7 +63,7 @@ export default function UploadVideo() {
 					likes: 0,
 					duration: "12:34",
 					video: uploadVideoThumbnail,
-					timestamp: "1711471862000",
+					timestamp: timestamp,
 					comments: [],
 				})
 				.catch(error => console.log(error));
