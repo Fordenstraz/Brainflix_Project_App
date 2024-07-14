@@ -1,11 +1,10 @@
 //Assets/Styles
-import './RenderVideoPage.scss';
+import "./RenderVideoPage.scss";
 //Components
-import VideoPlayer from '../../components/VideoPlayer/VideoPlayer';
-import VideoInfo from '../../components/VideoInfo/VideoInfo';
-import Comments from '../../components/Comments/Comments';
-import VideoList from '../../components/VideoList/VideoList';
-import scrollToTop from '../../utils/scrollToTop';
+import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
+import VideoInfo from "../../components/VideoInfo/VideoInfo";
+import Comments from "../../components/Comments/Comments";
+import VideoList from "../../components/VideoList/VideoList";
 
 export default function RenderVideoPage({
 	user,

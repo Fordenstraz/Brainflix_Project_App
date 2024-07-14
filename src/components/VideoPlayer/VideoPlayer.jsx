@@ -1,5 +1,5 @@
 //Assets/Styles
-import './VideoPlayer.scss';
+import "./VideoPlayer.scss";
 
 export default function VideoPlayer({ video }) {
 	return (
