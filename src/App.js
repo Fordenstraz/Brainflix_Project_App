@@ -21,21 +21,22 @@ export default function App() {
 	const [videoListArray, setVideoListArray] = useState([]);
 
 	//Get list of videos from API:
+	const fetchVideoList = async () => {
+		try {
+			const response = await axios.get(`${baseUrl}videos`);
+			//set response data as state:
+			setVideoListArray(response.data);
+			console.log("Video list call successful!");
+		} catch (error) {
+			console.log(
+				`An error has occurred during the request for the video list: `,
+				error
+			);
+		}
+	};
+
+	//trigger the API call:
 	useEffect(() => {
-		const fetchVideoList = async () => {
-			try {
-				const response = await axios.get(`${baseUrl}videos`);
-				//set response data as state:
-				setVideoListArray(response.data);
-				console.log("Video list call successful!");
-			} catch (error) {
-				console.log(
-					`An error has occurred during the request for the video list: `,
-					error
-				);
-			}
-		};
-		//trigger the API call:
 		fetchVideoList();
 	}, []);
 
@@ -69,7 +70,13 @@ export default function App() {
 
 					<Route
 						path='videos/upload'
-						element={<VideoUploadPage user={user} />}
+						element={
+							<VideoUploadPage
+								user={user}
+								setVideoListArray={setVideoListArray}
+								fetchVideoList={fetchVideoList}
+							/>
+						}
 					/>
 
 					<Route

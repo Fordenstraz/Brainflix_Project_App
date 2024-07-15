@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 //Assets/Styles
 import "./UploadVideo.scss";
@@ -9,8 +9,9 @@ import uploadVideoThumbnail from "../../assets/images/Upload-video-preview.jpg";
 //Components/Utilities
 import Button from "../Button/Button";
 import scrollToTop from "../../utils/scrollToTop";
+import VideoList from "../VideoList/VideoList";
 
-export default function UploadVideo() {
+export default function UploadVideo({ setVideoListArray, fetchVideoList }) {
 	const navigate = useNavigate();
 	//input state:
 	const [values, setValues] = useState({ title: "", description: "" });
@@ -72,6 +73,8 @@ export default function UploadVideo() {
 
 			console.log("Video upload successful");
 			alert("Video upload successful");
+			fetchVideoList();
+			console.log(VideoList);
 			scrollToTop();
 			navigate("/");
 		}

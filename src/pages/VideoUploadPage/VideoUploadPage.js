@@ -1,12 +1,15 @@
 //Assets/Styles
-import './VideoUploadPage.scss';
+import "./VideoUploadPage.scss";
 //Components
-import UploadVideo from '../../components/UploadVideo/UploadVideo';
+import UploadVideo from "../../components/UploadVideo/UploadVideo";
 
-export default function Upload() {
+export default function Upload({ setVideoListArray, fetchVideoList }) {
 	return (
 		<>
-			<UploadVideo />
+			<UploadVideo
+				setVideoListArray={setVideoListArray}
+				fetchVideoList={fetchVideoList}
+			/>
 		</>
 	);
 }

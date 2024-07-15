@@ -6,8 +6,6 @@ import { Link, useParams } from "react-router-dom";
 export default function VideoList({ videoList }) {
 	const currentVideo = useParams();
 
-	console.log(videoList);
-
 	//Create list that exclude current video:
 	const nextVideosList = videoList.filter(video => {
 		if (!currentVideo.videoId) {
