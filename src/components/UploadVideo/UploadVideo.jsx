@@ -58,6 +58,8 @@ export default function UploadVideo() {
 					title: values.title,
 					channel: "Mohan Muruge",
 					image: uploadVideoThumbnail,
+					altText:
+						"A close up of a runner on the starting blocks, holding a relay baton",
 					description: values.description,
 					views: 0,
 					likes: 0,

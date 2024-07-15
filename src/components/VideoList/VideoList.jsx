@@ -1,10 +1,12 @@
 //Assets/Styles
-import './VideoList.scss';
+import "./VideoList.scss";
 //Components/Utilities
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams } from "react-router-dom";
 
 export default function VideoList({ videoList }) {
 	const currentVideo = useParams();
+
+	console.log(videoList);
 
 	//Create list that exclude current video:
 	const nextVideosList = videoList.filter(video => {
@@ -25,7 +27,7 @@ export default function VideoList({ videoList }) {
 					<img
 						className='video-preview__image'
 						src={video.image}
-						alt='n/a'
+						alt={video.altText}
 					/>
 
 					<div className='video-preview__authorship'>
