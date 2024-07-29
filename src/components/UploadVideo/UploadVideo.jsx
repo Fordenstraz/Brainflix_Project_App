@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 //Assets/Styles
 import "./UploadVideo.scss";
@@ -9,14 +9,19 @@ import uploadVideoThumbnail from "../../assets/images/Upload-video-preview.jpg";
 //Components/Utilities
 import Button from "../Button/Button";
 import scrollToTop from "../../utils/scrollToTop";
-import VideoList from "../VideoList/VideoList";
 
-export default function UploadVideo({ setVideoListArray, fetchVideoList }) {
+export default function UploadVideo({ fetchVideoList }) {
 	const navigate = useNavigate();
 	//input state:
-	const [values, setValues] = useState({ title: "", description: "" });
+	const [values, setValues] = useState({
+		title: "",
+		description: "",
+	});
 	//error state:
-	const [errors, setErrors] = useState({ title: false, description: false });
+	const [errors, setErrors] = useState({
+		title: false,
+		description: false,
+	});
 
 	//input handler:
 	const handleInputChange = event => {
@@ -55,26 +60,27 @@ export default function UploadVideo({ setVideoListArray, fetchVideoList }) {
 
 			//axios POST to server:
 			axios
-				.post("http://localhost:8080/videos/upload", {
-					title: values.title,
-					channel: "Mohan Muruge",
-					image: uploadVideoThumbnail,
-					altText:
-						"A close up of a runner on the starting blocks, holding a relay baton",
-					description: values.description,
-					views: 0,
-					likes: 0,
-					duration: "12:34",
-					video: uploadVideoThumbnail,
-					timestamp: timestamp,
-					comments: [],
-				})
+				.post(
+					"http://localhost:8080/videos/upload",
+					{
+						title: values.title,
+						channel: "Mohan Muruge",
+						image: uploadVideoThumbnail,
+						altText:
+							"A close up of a runner on the starting blocks, holding a relay baton",
+						description: values.description,
+						views: 0,
+						likes: 0,
+						duration: "12:34",
+						video: uploadVideoThumbnail,
+						timestamp: timestamp,
+						comments: [],
+					}
+				)
 				.catch(error => console.log(error));
 
-			console.log("Video upload successful");
 			alert("Video upload successful");
 			fetchVideoList();
-			console.log(VideoList);
 			scrollToTop();
 			navigate("/");
 		}
@@ -83,7 +89,9 @@ export default function UploadVideo({ setVideoListArray, fetchVideoList }) {
 	return (
 		<div className='upload-section__wrapper'>
 			<section className='upload-section'>
-				<h1 className='upload-section__heading'>Upload Video</h1>
+				<h1 className='upload-section__heading'>
+					Upload Video
+				</h1>
 
 				<div className='upload-section__form-wrapper'>
 					<figure className='upload-section__thumbnail'>
@@ -137,7 +145,9 @@ export default function UploadVideo({ setVideoListArray, fetchVideoList }) {
 								rows='5'
 								placeholder='Add a description to your video'
 								onChange={handleInputChange}
-								value={values.description}></textarea>
+								value={
+									values.description
+								}></textarea>
 							{errors.description && (
 								<span className='error-message'>
 									This field is required
@@ -155,7 +165,9 @@ export default function UploadVideo({ setVideoListArray, fetchVideoList }) {
 					/>
 
 					<Link to='/'>
-						<button className='cancel-btn'>CANCEL</button>
+						<button className='cancel-btn'>
+							CANCEL
+						</button>
 					</Link>
 				</div>
 			</section>

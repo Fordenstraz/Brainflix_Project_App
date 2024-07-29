@@ -1,4 +1,8 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+	BrowserRouter as Router,
+	Routes,
+	Route,
+} from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 //Assets/Styles
@@ -18,15 +22,18 @@ export default function App() {
 	const baseUrl = `http://localhost:8080/`;
 
 	//Video list:
-	const [videoListArray, setVideoListArray] = useState([]);
+	const [videoListArray, setVideoListArray] = useState(
+		[]
+	);
 
 	//Get list of videos from API:
 	const fetchVideoList = async () => {
 		try {
-			const response = await axios.get(`${baseUrl}videos`);
+			const response = await axios.get(
+				`${baseUrl}videos`
+			);
 			//set response data as state:
 			setVideoListArray(response.data);
-			console.log("Video list call successful!");
 		} catch (error) {
 			console.log(
 				`An error has occurred during the request for the video list: `,
@@ -73,8 +80,12 @@ export default function App() {
 						element={
 							<VideoUploadPage
 								user={user}
-								setVideoListArray={setVideoListArray}
-								fetchVideoList={fetchVideoList}
+								setVideoListArray={
+									setVideoListArray
+								}
+								fetchVideoList={
+									fetchVideoList
+								}
 							/>
 						}
 					/>

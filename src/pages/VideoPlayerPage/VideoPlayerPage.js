@@ -7,7 +7,11 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import scrollToTop from "../../utils/scrollToTop";
 
-export default function VideoPlayerPage({ user, baseUrl, videoList }) {
+export default function VideoPlayerPage({
+	user,
+	baseUrl,
+	videoList,
+}) {
 	//Set up for homepage video:
 	const homeVideo = videoList[0]?.id;
 
@@ -25,8 +29,6 @@ export default function VideoPlayerPage({ user, baseUrl, videoList }) {
 					const response = await axios.get(
 						`${baseUrl}videos/${homeVideo}`
 					);
-
-					console.log(response);
 
 					//get data from response:
 					setCurrentVideo(response.data);
