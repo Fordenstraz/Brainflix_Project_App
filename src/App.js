@@ -16,7 +16,7 @@ import PageNotFound from "./pages/PageNotFound/PageNotFound";
 
 export default function App() {
 	//Set state for current user:
-	const [user, setUser] = useState(userData);
+	const [user] = useState(userData);
 
 	//Set API URL and key:
 	const baseUrl = `http://localhost:8080/`;
